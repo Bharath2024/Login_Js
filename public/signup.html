@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            /* Light gray background */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        form {
+            width: 100%;
+            max-width: 400px;
+            background-color: #f0f0f0;
+            /* Light gray background */
+            padding: 20px;
+            border-radius: 20px;
+            /* Increased border radius for Neumorphism effect */
+            box-shadow: 10px 10px 20px #c4c4c4, -10px -10px 20px #ffffff;
+            /* Neumorphic shadow */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            /* Align items to the left */
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #f0f0f0;
+            /* Light gray background */
+        }
+
+        input[type="password"] {
+            padding-right: 30px;
+        }
+
+        input[type="submit"] {
+            background-color: #3498db;
+            /* Blue Submit Button */
+            color: white;
+            cursor: pointer;
+            height: 40px;
+            border: none;
+            border-radius: 8px;
+            box-shadow: 5px 5px 10px #b4b4b4, -5px -5px 10px #ffffff;
+            /* Neumorphic shadow */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #2980b9;
+        }
+
+        .login-link {
+            text-align: center;
+            color: #333;
+        }
+
+        .login-link a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <title>Sign Up</title>
+</head>
+
+<body>
+    <h1>Sign Up</h1>
+
+    <form action="/sign_up" method="POST">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"
+            title="Enter a valid email address" required>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile" pattern="[6789][0-9]{9}"
+            title="Enter a valid 10-digit mobile number starting with 6, 7, 8, or 9" required>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+        <input type="submit" value="Sign Up">
+
+        <div class="login-link">
+            <p>Already have an account? <a href="login.html">Login</a></p>
+        </div>
+    </form>
+</body>
+
+</html>
